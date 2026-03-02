@@ -76,13 +76,13 @@ export default function Menu({ menus, extras }) {
               <h3 className="font-lato text-xs tracking-widest uppercase text-sedef-darkest mb-5 text-center">
                 Dodaci
               </h3>
-              <ul className="flex flex-wrap justify-center gap-x-10 gap-y-3">
+              <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
                 {extras.map((extra) => (
-                  <li key={extra.name} className="flex items-center gap-3">
-                    <span className="font-garamond text-lg text-sedef-darkest">
+                  <li key={extra.name} className="flex items-center gap-2">
+                    <span className="font-garamond text-base text-sedef-darkest">
                       {extra.name}
                     </span>
-                    <span className="font-lato text-xs text-sedef-mid">
+                    <span className="font-lato text-xs text-sedef-mid whitespace-nowrap">
                       – {extra.price}
                     </span>
                   </li>

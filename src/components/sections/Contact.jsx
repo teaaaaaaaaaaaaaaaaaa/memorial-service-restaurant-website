@@ -55,6 +55,8 @@ export default function Contact({ contact }) {
             </span>
             <a
               href={`mailto:${contact.email}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-garamond text-2xl text-sedef-light hover:text-sedef-lightest transition-colors"
             >
               {contact.email}
