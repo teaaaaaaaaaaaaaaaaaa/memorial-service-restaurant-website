@@ -14,7 +14,7 @@ export default function FAQ({ faq }) {
   return (
     <section
       id="faq"
-      className="section-padding bg-sedef-dark"
+      className="section-padding bg-sedef-darkest border-b border-sedef-mid/20"
       aria-labelledby="faq-heading"
     >
       <div className="section-container">
