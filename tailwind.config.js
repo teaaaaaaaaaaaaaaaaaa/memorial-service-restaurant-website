@@ -8,30 +8,30 @@ export default {
     extend: {
       colors: {
         sedef: {
-          darkest:  "#0C1821",
-          dark:     "#223843",
-          mid:      "#505E65",
-          muted:    "#7D8486",
-          light:    "#B6BAB9",
-          lightest: "#EEF0EB",
+          darkest: "#0C1821",
+          dark: "#223843",
+          mid: "#505E65",
+          muted: "#7D8486",
+          light: "#B6BAB9",
+          lightest: "#eaecd5",
         },
       },
       fontFamily: {
         playfair: ["'Playfair Display'", "Georgia", "serif"],
         garamond: ["'EB Garamond'", "Georgia", "serif"],
-        lato:     ["'Lato'", "system-ui", "sans-serif"],
+        lato: ["'Lato'", "system-ui", "sans-serif"],
       },
       animation: {
         "fade-in-up": "fadeInUp 0.7s ease forwards",
-        "fade-in":    "fadeIn 0.7s ease forwards",
+        "fade-in": "fadeIn 0.7s ease forwards",
       },
       keyframes: {
         fadeInUp: {
-          "0%":   { opacity: "0", transform: "translateY(1.5rem)" },
+          "0%": { opacity: "0", transform: "translateY(1.5rem)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         fadeIn: {
-          "0%":   { opacity: "0" },
+          "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
       },

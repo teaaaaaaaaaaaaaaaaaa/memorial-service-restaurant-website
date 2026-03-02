@@ -13,15 +13,15 @@
   }
 
   h1 {
-    @apply font-playfair text-sedef-lightest;
+    @apply font-playfair;
   }
 
   h2 {
-    @apply font-playfair text-sedef-lightest;
+    @apply font-playfair;
   }
 
   h3 {
-    @apply font-playfair text-sedef-lightest;
+    @apply font-playfair;
   }
 
   p {
@@ -43,17 +43,11 @@
   }
 
   .btn-primary {
-    @apply font-lato font-bold tracking-wide bg-transparent border border-sedef-light text-sedef-lightest
-           py-4 px-10 transition-all duration-300
-           hover:bg-sedef-light hover:text-sedef-darkest
-           min-h-[52px] inline-flex items-center justify-center gap-2;
+    @apply font-lato font-bold tracking-wide bg-transparent border border-sedef-light text-sedef-lightest py-4 px-10 transition-all duration-300 hover:bg-sedef-light hover:text-sedef-darkest min-h-[52px] inline-flex items-center justify-center gap-2;
   }
 
   .btn-call {
-    @apply font-lato font-bold tracking-wide bg-sedef-dark border border-sedef-mid text-sedef-lightest
-           py-3 px-8 transition-all duration-300
-           hover:bg-sedef-mid hover:border-sedef-light
-           min-h-[48px] inline-flex items-center justify-center gap-2;
+    @apply font-lato font-bold tracking-wide bg-sedef-dark border border-sedef-mid text-sedef-lightest py-3 px-8 transition-all duration-300 hover:bg-sedef-mid hover:border-sedef-light min-h-[48px] inline-flex items-center justify-center gap-2;
   }
 
   .section-divider {

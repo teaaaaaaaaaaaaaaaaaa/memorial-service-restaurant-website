@@ -14,11 +14,11 @@ export default function Menu({ menus, extras }) {
   return (
     <section
       id="meni"
-      className="section-padding bg-sedef-dark"
+      className="section-padding bg-sedef-lightest text-sedef-darkest"
       aria-labelledby="menu-heading"
     >
       <div className="section-container">
-        <SectionHeading title="Meni" id="menu-heading" />
+        <SectionHeading title="Meni" id="menu-heading" light={true} />
 
         {/* Tab switcher */}
         <div
@@ -38,8 +38,8 @@ export default function Menu({ menus, extras }) {
                 font-lato text-sm tracking-widest uppercase px-8 py-4
                 border-b-2 transition-all duration-300
                 ${index === activeTab
-                  ? 'border-sedef-lightest text-sedef-lightest'
-                  : 'border-transparent text-sedef-muted hover:text-sedef-light hover:border-sedef-mid'
+                  ? 'border-sedef-darkest text-sedef-darkest'
+                  : 'border-transparent text-sedef-mid hover:text-sedef-dark hover:border-sedef-mid'
                 }
               `}
             >
@@ -56,13 +56,13 @@ export default function Menu({ menus, extras }) {
           aria-labelledby={`menu-tab-${activeMenu.id}`}
           className={`
             max-w-2xl mx-auto
-            bg-sedef-darkest/50 border border-sedef-mid/30 p-8 md:p-10
+            bg-sedef-light/10 border border-sedef-mid/30 p-8 md:p-10
             transition-all duration-700
             ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
           `}
         >
           {/* Menu name */}
-          <h3 className="font-playfair text-2xl text-sedef-lightest mb-8 text-center">
+          <h3 className="font-playfair text-2xl text-sedef-darkest mb-8 text-center">
             {activeMenu.name}
           </h3>
 
@@ -72,23 +72,23 @@ export default function Menu({ menus, extras }) {
         {/* Extras / Dodaci */}
         {extras && extras.length > 0 && (
           <div className="max-w-2xl mx-auto mt-10">
-            <div className="border border-sedef-mid/20 p-6 md:p-8 bg-sedef-darkest/30">
-              <h3 className="font-lato text-xs tracking-widest uppercase text-sedef-muted mb-5 text-center">
+            <div className="border border-sedef-mid/20 p-6 md:p-8 bg-sedef-light/10">
+              <h3 className="font-lato text-xs tracking-widest uppercase text-sedef-darkest mb-5 text-center">
                 Dodaci
               </h3>
               <ul className="flex flex-wrap justify-center gap-x-10 gap-y-3">
                 {extras.map((extra) => (
                   <li key={extra.name} className="flex items-center gap-3">
-                    <span className="font-garamond text-base text-sedef-light">
+                    <span className="font-garamond text-base text-sedef-darkest">
                       {extra.name}
                     </span>
-                    <span className="font-lato text-xs text-sedef-muted">
+                    <span className="font-lato text-xs text-sedef-mid">
                       – {extra.price}
                     </span>
                   </li>
                 ))}
               </ul>
-              <p className="font-lato text-xs text-sedef-muted text-center mt-5">
+              <p className="font-lato text-xs text-sedef-mid text-center mt-5">
                 Za detalje o cenama i dostupnosti molimo Vas da nas kontaktirate telefonom.
               </p>
             </div>
