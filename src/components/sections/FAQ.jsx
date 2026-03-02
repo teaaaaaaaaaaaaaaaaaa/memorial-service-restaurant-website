@@ -14,7 +14,7 @@ export default function FAQ({ faq }) {
   return (
     <section
       id="faq"
-      className="section-padding bg-sedef-dark"
+      className="section-padding bg-sedef-lightest text-sedef-darkest"
       aria-labelledby="faq-heading"
     >
       <div className="section-container">
@@ -22,6 +22,7 @@ export default function FAQ({ faq }) {
           title="Česta pitanja"
           subtitle="Odgovori na najčešća pitanja o organizaciji parastosa"
           id="faq-heading"
+          light={true}
         />
 
         <dl
