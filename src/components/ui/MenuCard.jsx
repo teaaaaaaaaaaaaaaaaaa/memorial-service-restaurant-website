@@ -24,7 +24,7 @@ export default function MenuCard({ menu }) {
               <span className="font-lato text-xs tracking-widest uppercase text-sedef-mid block mb-0.5">
                 {item.course}
               </span>
-              <span className="font-garamond text-base text-sedef-mid">
+              <span className="font-garamond text-lg text-sedef-mid">
                 {item.description}
               </span>
             </div>

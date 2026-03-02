@@ -21,9 +21,9 @@ export default function Navbar({ phone }) {
         {/* Logo */}
         <a href="#" aria-label="Restoran Sedef – početna stranica">
           <img
-            src="/images/logo-compact.png"
+            src="/images/logo-horizontal-white.png"
             alt="Restoran Sedef"
-            className="h-10 md:h-12 w-auto object-contain"
+            className={`w-auto object-contain transition-all duration-500 ${scrolled ? 'h-10 md:h-12' : 'h-14 md:h-20'}`}
             width="96"
             height="48"
           />
@@ -95,14 +95,6 @@ export default function Navbar({ phone }) {
               {link.label}
             </a>
           ))}
-          {phone && (
-            <a
-              href={`tel:${phone.replace(/\s/g, '')}`}
-              className="btn-call mt-2 text-sm"
-            >
-              Pozovite za rezervaciju
-            </a>
-          )}
         </nav>
       )}
     </header>

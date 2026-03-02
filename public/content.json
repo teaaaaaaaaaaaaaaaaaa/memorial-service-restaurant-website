@@ -16,7 +16,7 @@
   },
   "about": {
     "title": "O Restoranu",
-    "text": "Restoran Sedef je specijalizovan za organizaciju parastosa i pomen trpeza. Nalazimo se neposredno pored groblja Orlovača u Beogradu, što nam omogućava da porodicama pružimo dostojanstvenu i organizovanu proslavu sećanja na voljene. Raspolažemo sopstvenom kuhinjom i kapacitetom od 80 mesta, sa potpunom organizacijom trpeze.",
+    "text": "Restoran Sedef je specijalizovan za organizaciju parastosa i pomen trpeza. Nalazimo se neposredno pored groblja Orlovača u Beogradu, što nam omogućava da porodicama pružimo dostojanstvenu i organizovanu proslavu sećanja na voljene. Raspolažemo sopstvenom kuhinjom i kapacitetom od 80 mesta, sa potpunom organizacijom trpeze. Nudimo dve vrste menija – posni i mrsni – prilagođene svakoj prilici.",
     "highlights": [
       { "label": "80 mesta", "icon": "users" },
       { "label": "Sopstvena kuhinja", "icon": "chef" },
@@ -113,7 +113,7 @@
   },
   "footer": {
     "name": "Restoran Sedef",
-    "tagline": "Sala za parastose – Orlovača, Beograd",
+    "tagline": "Restoran za parastose i pomen trpeze pored groblja Orlovača u Beogradu. Sopstvena kuhinja, 80 mesta i potpuna organizacija.",
     "address": "Groblje Orlovača 28, Beograd",
     "phone": "+381XX XXX XXXX",
     "phoneDisplay": "0XX XXX XXXX",

@@ -10,7 +10,7 @@ export default function FaqItem({ item, isOpen, onToggle }) {
           className="
             w-full flex items-center justify-between
             py-5 text-left
-            font-playfair text-lg text-sedef-lightest
+            font-playfair text-xl text-sedef-lightest
             transition-colors duration-200
             hover:text-sedef-light
             focus-visible:outline-none focus-visible:text-sedef-light
@@ -37,7 +37,7 @@ export default function FaqItem({ item, isOpen, onToggle }) {
         className="overflow-hidden transition-all duration-400 ease-in-out"
         style={{ maxHeight: isOpen ? '500px' : '0' }}
       >
-        <p className="font-garamond text-base text-sedef-light leading-relaxed pb-5 pt-1">
+        <p className="font-garamond text-lg text-sedef-light leading-relaxed pb-5 pt-1">
           {item.answer}
         </p>
       </dd>

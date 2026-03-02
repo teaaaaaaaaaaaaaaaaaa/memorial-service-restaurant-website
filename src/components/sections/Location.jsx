@@ -28,103 +28,110 @@ export default function Location({ location, consented, onAcceptCookies }) {
   return (
     <section
       id="lokacija"
-      className="section-padding bg-sedef-darkest"
+      className="bg-sedef-darkest"
       aria-labelledby="location-heading"
     >
-      <div className="section-container">
+      <div className="section-container pt-20 pb-10">
         <SectionHeading title={location.title} id="location-heading" />
 
         <div
           ref={ref}
           className={`
-            grid md:grid-cols-5 gap-8 md:gap-12 items-start
             transition-all duration-700
             ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
           `}
         >
-          {/* Map (60%) */}
-          <div className="md:col-span-3">
-            {consented ? (
-              <iframe
-                src={location.mapEmbedUrl}
-                title="Lokacija Restoran Sedef na Google mapi"
-                width="100%"
-                height="380"
-                className="w-full border border-sedef-mid/30 grayscale"
-                style={{ filter: 'grayscale(80%) invert(90%) contrast(80%)' }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            ) : (
-              <div
-                className="
-                  w-full h-[380px] border border-sedef-mid/30
-                  bg-sedef-dark flex flex-col items-center justify-center gap-4
-                  text-center p-6
-                "
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-10 h-10 text-sedef-muted" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+          {/* Info bar */}
+          <div className="border border-sedef-mid/30 bg-sedef-dark/30 p-6 md:p-8">
+            <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
+              {/* Address */}
+              <address className="not-italic flex items-center gap-3 flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.2} stroke="currentColor" className="w-6 h-6 text-sedef-muted flex-shrink-0" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                 </svg>
-                <p className="font-garamond text-sedef-light text-sm">
-                  Za prikaz Google mape potrebna je Vaša saglasnost za kolačiće.
-                </p>
-                <button
-                  onClick={onAcceptCookies}
-                  className="btn-call text-sm"
+                <a
+                  href={location.mapDirectionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-playfair text-xl text-sedef-lightest hover:text-sedef-light transition-colors"
                 >
-                  Učitaj mapu
-                </button>
-              </div>
-            )}
+                  {location.address}
+                </a>
+              </address>
+
+              {/* Divider */}
+              <div className="hidden md:block w-px h-8 bg-sedef-mid/40" aria-hidden="true" />
+
+              {/* Highlights */}
+              <ul className="flex flex-wrap gap-x-6 gap-y-3">
+                {(location.highlights || []).map((item) => (
+                  <li key={item.label} className="flex items-center gap-2">
+                    <span className="text-sedef-muted flex-shrink-0">
+                      {LOCATION_ICONS[item.icon] || null}
+                    </span>
+                    <span className="font-garamond text-lg text-sedef-light">
+                      {item.label}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
+        </div>
+      </div>
 
-          {/* Address details (40%) */}
-          <div className="md:col-span-2 flex flex-col gap-6">
-            <address className="not-italic flex flex-col gap-2">
-              <span className="font-lato text-xs tracking-widest uppercase text-sedef-muted mb-1 block">
-                Adresa
-              </span>
-              <a
-                href={location.mapDirectionsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-playfair text-xl text-sedef-lightest hover:text-sedef-light transition-colors"
-              >
-                {location.address}
-              </a>
-            </address>
-
-            <div className="w-8 h-px bg-sedef-mid/50" aria-hidden="true" />
-
-            {/* Highlights */}
-            <ul className="flex flex-col gap-4">
-              {(location.highlights || []).map((item) => (
-                <li key={item.label} className="flex items-center gap-3">
-                  <span className="text-sedef-light flex-shrink-0">
-                    {LOCATION_ICONS[item.icon] || null}
-                  </span>
-                  <span className="font-garamond text-base text-sedef-light">
-                    {item.label}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="w-8 h-px bg-sedef-mid/50" aria-hidden="true" />
-
+      {/* Full-width map */}
+      <div className="relative w-full">
+        {consented ? (
+          <>
+            <div className="absolute inset-0 z-[1]" aria-hidden="true" />
+            <iframe
+              src={location.mapEmbedUrl}
+              title="Lokacija Restoran Sedef na Google mapi"
+              width="100%"
+              height="450"
+              className="w-full border-0"
+              style={{ filter: 'grayscale(80%) invert(90%) contrast(80%)' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
             <a
               href={location.mapDirectionsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-call text-sm self-start"
+              className="btn-call text-sm absolute top-4 right-4 z-10"
             >
               Otvori u Google Maps
             </a>
+          </>
+        ) : (
+          <div
+            className="
+              w-full h-[450px]
+              bg-sedef-dark flex flex-col items-center justify-center gap-4
+              text-center p-6
+            "
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-10 h-10 text-sedef-muted" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+            </svg>
+            <p className="font-garamond text-sedef-light text-lg">
+              Za prikaz Google mape potrebna je Vaša saglasnost za kolačiće.
+            </p>
+            <button
+              onClick={onAcceptCookies}
+              className="btn-call text-sm"
+            >
+              Učitaj mapu
+            </button>
           </div>
-        </div>
+        )}
       </div>
+
+      {/* Thin strip below map */}
+      <div className="h-3 bg-sedef-darkest" aria-hidden="true" />
     </section>
   )
 }

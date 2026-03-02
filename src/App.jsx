@@ -28,7 +28,7 @@ export default function App() {
 
   if (!data) return null
 
-  const schema = buildSchema(data.contact, data.location)
+  const schemas = buildSchema(data.contact, data.location)
   const phone = data.contact?.phone
 
   return (
@@ -38,24 +38,12 @@ export default function App() {
         <meta name="description" content={data.seo?.description} />
         <link rel="canonical" href={data.seo?.canonical} />
 
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={data.seo?.title} />
-        <meta property="og:description" content={data.seo?.description} />
-        <meta property="og:image" content={data.seo?.ogImage} />
-        <meta property="og:url" content={data.seo?.canonical} />
-        <meta property="og:locale" content="sr_RS" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={data.seo?.title} />
-        <meta name="twitter:description" content={data.seo?.description} />
-        <meta name="twitter:image" content={data.seo?.ogImage} />
-
         {/* Schema.org */}
-        <script type="application/ld+json">
-          {JSON.stringify(schema)}
-        </script>
+        {schemas.map((schema, i) => (
+          <script key={i} type="application/ld+json">
+            {JSON.stringify(schema)}
+          </script>
+        ))}
       </Helmet>
 
       <Navbar phone={phone} />

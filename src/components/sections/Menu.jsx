@@ -79,7 +79,7 @@ export default function Menu({ menus, extras }) {
               <ul className="flex flex-wrap justify-center gap-x-10 gap-y-3">
                 {extras.map((extra) => (
                   <li key={extra.name} className="flex items-center gap-3">
-                    <span className="font-garamond text-base text-sedef-darkest">
+                    <span className="font-garamond text-lg text-sedef-darkest">
                       {extra.name}
                     </span>
                     <span className="font-lato text-xs text-sedef-mid">
