@@ -20,7 +20,7 @@ const LOCATION_ICONS = {
   ),
 }
 
-export default function Location({ location, consented, onAcceptCookies }) {
+export default function Location({ location }) {
   const { ref, visible } = useIntersection()
 
   if (!location) return null
@@ -83,51 +83,25 @@ export default function Location({ location, consented, onAcceptCookies }) {
 
       {/* Full-width map */}
       <div className="relative w-full">
-        {consented ? (
-          <>
-            <div className="absolute inset-0 z-[1]" aria-hidden="true" />
-            <iframe
-              src={location.mapEmbedUrl}
-              title="Lokacija Restoran Sedef na Google mapi"
-              width="100%"
-              height="450"
-              className="w-full border-0"
-              style={{ filter: 'grayscale(80%) invert(90%) contrast(80%)' }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-            <a
-              href={location.mapDirectionsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-call text-sm absolute top-4 right-4 z-10"
-            >
-              Otvori u Google Maps
-            </a>
-          </>
-        ) : (
-          <div
-            className="
-              w-full h-[450px]
-              bg-sedef-dark flex flex-col items-center justify-center gap-4
-              text-center p-6
-            "
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-10 h-10 text-sedef-muted" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
-            </svg>
-            <p className="font-garamond text-sedef-light text-lg">
-              Za prikaz Google mape potrebna je Vaša saglasnost za kolačiće.
-            </p>
-            <button
-              onClick={onAcceptCookies}
-              className="btn-call text-sm"
-            >
-              Učitaj mapu
-            </button>
-          </div>
-        )}
+        <iframe
+          src={location.mapEmbedUrl}
+          title="Lokacija Restoran Sedef na Google mapi"
+          width="100%"
+          height="450"
+          className="w-full border-0"
+          style={{ filter: 'grayscale(80%) invert(90%) contrast(80%)' }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+        <a
+          href={location.mapDirectionsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-call text-sm absolute top-4 right-4 z-10"
+        >
+          Otvori u Google Maps
+        </a>
       </div>
 
       {/* Thin strip below map */}

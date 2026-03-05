@@ -52,11 +52,7 @@ export default function App() {
         <Hero hero={data.hero} phone={phone} />
         <About about={data.about} />
         <Menu menus={data.menus} extras={data.extras} />
-        <Location
-          location={data.location}
-          consented={consented}
-          onAcceptCookies={accept}
-        />
+        <Location location={data.location} />
         <FAQ faq={data.faq} />
         <Contact contact={data.contact} />
       </main>

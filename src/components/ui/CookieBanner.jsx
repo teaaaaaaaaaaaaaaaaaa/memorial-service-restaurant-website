@@ -15,8 +15,8 @@ export default function CookieBanner({ consented, onAccept }) {
       "
     >
       <p className="font-lato text-sm text-sedef-light flex-1 leading-relaxed">
-        Ovaj sajt koristi Google Maps za prikaz lokacije, što može uključivati kolačiće trećih strana.
-        Klikom na &ldquo;Prihvatam&rdquo; pristajete na učitavanje mape.
+        Ovaj sajt koristi &bdquo;kolačiće&ldquo; kako bi vam obezbedio što kvalitetnije korisničko iskustvo
+        prilikom pretraživanja sajta, kao i prikazivanja personalizovanog sadržaja.
       </p>
       <button
         onClick={onAccept}
