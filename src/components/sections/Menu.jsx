@@ -14,11 +14,11 @@ export default function Menu({ menus, extras }) {
   return (
     <section
       id="meni"
-      className="section-padding bg-sedef-lightest text-sedef-darkest"
+      className="section-padding bg-sedef-dark text-sedef-lightest"
       aria-labelledby="menu-heading"
     >
       <div className="section-container">
-        <SectionHeading title="Meni" id="menu-heading" light={true} />
+        <SectionHeading title="Meni" id="menu-heading" />
 
         {/* Tab switcher */}
         <div
@@ -38,8 +38,8 @@ export default function Menu({ menus, extras }) {
                 font-lato text-sm tracking-widest uppercase px-8 py-4
                 border-b-2 transition-all duration-300
                 ${index === activeTab
-                  ? 'border-sedef-darkest text-sedef-darkest'
-                  : 'border-transparent text-sedef-mid hover:text-sedef-dark hover:border-sedef-mid'
+                  ? 'border-sedef-lightest text-sedef-lightest'
+                  : 'border-transparent text-sedef-muted hover:text-sedef-light hover:border-sedef-muted'
                 }
               `}
             >
@@ -62,7 +62,7 @@ export default function Menu({ menus, extras }) {
           `}
         >
           {/* Menu name */}
-          <h3 className="font-playfair text-2xl text-sedef-darkest mb-8 text-center">
+          <h3 className="font-playfair text-2xl text-sedef-lightest mb-8 text-center">
             {activeMenu.name}
           </h3>
 
@@ -73,22 +73,22 @@ export default function Menu({ menus, extras }) {
         {extras && extras.length > 0 && (
           <div className="max-w-2xl mx-auto mt-10">
             <div className="border border-sedef-mid/20 p-6 md:p-8 bg-sedef-light/10">
-              <h3 className="font-lato text-xs tracking-widest uppercase text-sedef-darkest mb-5 text-center">
+              <h3 className="font-lato text-xs tracking-widest uppercase text-sedef-lightest mb-5 text-center">
                 Dodaci
               </h3>
               <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
                 {extras.map((extra) => (
                   <li key={extra.name} className="flex items-center gap-2">
-                    <span className="font-garamond text-base text-sedef-darkest">
+                    <span className="font-garamond text-base text-sedef-lightest">
                       {extra.name}
                     </span>
-                    <span className="font-lato text-xs text-sedef-mid whitespace-nowrap">
+                    <span className="font-lato text-xs text-sedef-muted whitespace-nowrap">
                       – {extra.price}
                     </span>
                   </li>
                 ))}
               </ul>
-              <p className="font-lato text-xs text-sedef-mid text-center mt-5">
+              <p className="font-lato text-xs text-sedef-muted text-center mt-5">
                 Za detalje o cenama i dostupnosti molimo Vas da nas kontaktirate telefonom.
               </p>
             </div>

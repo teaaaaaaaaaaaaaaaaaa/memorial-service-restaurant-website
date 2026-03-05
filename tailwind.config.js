@@ -9,7 +9,7 @@ export default {
       colors: {
         sedef: {
           darkest: "#0C1821",
-          dark: "#223843",
+          dark: "#2e424c",
           mid: "#505E65",
           muted: "#7D8486",
           light: "#B6BAB9",

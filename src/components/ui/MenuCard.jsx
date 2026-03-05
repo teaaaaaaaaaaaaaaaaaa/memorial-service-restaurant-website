@@ -21,10 +21,10 @@ export default function MenuCard({ menu }) {
               <div className="w-1 h-1 rounded-full bg-sedef-mid mt-3 flex-shrink-0" aria-hidden="true" />
             )}
             <div className="flex-1 min-w-0">
-              <span className="font-lato text-xs tracking-widest uppercase text-sedef-mid block mb-0.5">
+              <span className="font-lato text-xs tracking-widest uppercase text-sedef-muted block mb-0.5">
                 {item.course}
               </span>
-              <span className="font-garamond text-lg text-sedef-mid">
+              <span className="font-garamond text-lg text-sedef-light">
                 {item.description}
               </span>
             </div>
@@ -38,7 +38,7 @@ export default function MenuCard({ menu }) {
           {menu.priceLabel}
         </span>
         <div className="text-right">
-          <span className="font-playfair text-2xl text-sedef-darkest">
+          <span className="font-playfair text-2xl text-sedef-lightest">
             {menu.price}
           </span>
           <span className="font-lato text-xs text-sedef-mid ml-1.5">

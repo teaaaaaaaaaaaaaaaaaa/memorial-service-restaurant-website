@@ -9,7 +9,7 @@ export default function Contact({ contact }) {
   return (
     <section
       id="kontakt"
-      className="section-padding bg-sedef-darkest"
+      className="section-padding bg-sedef-dark"
       aria-labelledby="contact-heading"
     >
       <div className="section-container">
