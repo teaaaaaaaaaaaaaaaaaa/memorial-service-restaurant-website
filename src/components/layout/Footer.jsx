@@ -107,7 +107,7 @@ export default function Footer({ footer }) {
             rel="noopener noreferrer"
             className="font-lato text-sm text-sedef-muted hover:text-sedef-light transition-colors"
           >
-            Dizajn i izrada AjsaSoft
+            Created by AjsaSoft
           </a>
         </div>
       </div>
